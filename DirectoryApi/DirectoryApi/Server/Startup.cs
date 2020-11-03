@@ -46,8 +46,8 @@ namespace DirectoryApi.Server
                 // something like https://cloud.google.com/secret-manager/docs/overview to help keep
                 // secrets secret.
                 Host = string.Format("{0}/{1}", dbSocketDir, instanceConnectionName),
-                Username = GetDBUserName(),
-                Password = GetDBPassword(),
+                Username = GetDBUserNameHardCoded(),
+                Password = GetDBPasswordHardCoded(),
                 Database = "postgres"
 
             };
@@ -98,7 +98,17 @@ namespace DirectoryApi.Server
             });
         }
 
-        string GetDBPassword()
+        private string GetDBPasswordHardCoded()
+        {
+            return "Password21";
+        }
+
+        private string GetDBUserNameHardCoded()
+        {
+            return "cory-sql";
+        }
+
+        private string GetDBPassword()
         {
             // Create the client.
             SecretManagerServiceClient client = SecretManagerServiceClient.Create();
@@ -116,7 +126,7 @@ namespace DirectoryApi.Server
             return result.Payload.Data.ToStringUtf8();
         }
 
-        string GetDBUserName()
+        private string GetDBUserName()
         {
             // Create the client.
             SecretManagerServiceClient client = SecretManagerServiceClient.Create();
