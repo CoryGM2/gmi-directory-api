@@ -26,6 +26,9 @@ namespace DirectoryApi.Server
         {
             var connString = Configuration.GetConnectionString("DefaultConnection");
 
+            if (String.IsNullOrWhiteSpace(connString))
+                connString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+
             //  PostgreSql Database
             if (connString != null)
                 services.AddDbContext<DirectoryContext>(options => options.UseNpgsql(connString));
