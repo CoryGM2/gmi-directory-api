@@ -32,5 +32,7 @@ insert into dbo.Person (Id, FirstName, LastName) values (9, 'Jackson', 'Hayes');
 insert into dbo.Person (Id, FirstName, LastName) values (10, 'Jenny', 'Newman');
 insert into dbo.Person (Id, FirstName, LastName) values (11, 'Sarah', 'Bannister');
 
+commit;
+
 select *
 	from dbo.person
