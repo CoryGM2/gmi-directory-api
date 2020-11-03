@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>27cbffa2-462d-499d-8cfd-4899aaeff6b2</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DirectoryApi.DataAccess\DirectoryApi.DataAccess.csproj" />
+    <ProjectReference Include="..\Client\DirectoryApi.Client.csproj" />
+    <ProjectReference Include="..\Shared\DirectoryApi.Shared.csproj" />
+  </ItemGroup>
+
+
+</Project>
