@@ -51,10 +51,13 @@ namespace DirectoryApi.Server
                 Database = "postgres"
 
             };
+
             connectionString.Pooling = true;
 
             NpgsqlConnection connection =
                 new NpgsqlConnection(connectionString.ConnectionString);
+
+            Console.WriteLine("Conn String: " + connection);
 
             //  PostgreSql Database
             if (connection != null)
