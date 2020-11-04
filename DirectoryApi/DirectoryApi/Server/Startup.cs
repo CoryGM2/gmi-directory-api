@@ -100,12 +100,12 @@ namespace DirectoryApi.Server
 
         private string GetDBPasswordHardCoded()
         {
-            return "Password21";
+            return "web-user-pass";
         }
 
         private string GetDBUserNameHardCoded()
         {
-            return "cory-sql";
+            return "web-user";
         }
 
         private string GetDBPassword()
